@@ -4,9 +4,9 @@ int main(void)
 {
   int myNum;
   printf("number: ");
-  int n = scanf("%i", &myNum);
+  scanf("%i", &myNum);
 
-  if (n % 2 == 0)
+  if (myNum % 2 == 0)
   {
     printf("even\n");
   }
