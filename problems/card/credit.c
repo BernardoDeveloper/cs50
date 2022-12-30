@@ -15,7 +15,7 @@ int main(void)
 	bool isValid = check_card_number(number);
 	if (isValid == false)
 	{
-		printf("Invalid credit card.\n");
+		printf("INVALID\n");
 		return 1;
 	}
 
@@ -51,8 +51,12 @@ int str_length(char str[])
 
 void verify_brand_card(char number[])
 {
-	if (number[0] == '4')
+	if (strncmp(number, "34", 2) == 0 || strncmp(number, "37", 2) == 0)
+		printf("AMEX\n");
+	else if (strncmp(number, "4", 1) == 0)
 		printf("VISA\n");
-	else if (number[0] == '5' && number[1] == '1' || number[0] == '5' && number[1] == '5')
-		printf("MASTER\n");
+	else if (strncmp(number, "51", 2) == 0 || strncmp(number, "52", 2) == 0 || strncmp(number, "53", 2) == 0 || strncmp(number, "54", 2) == 0 || strncmp(number, "55", 2) == 0)
+		printf("MASTERCARD\n");
+	else
+		printf("UNDEFINED\n");
 }
