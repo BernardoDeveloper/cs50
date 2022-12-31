@@ -9,11 +9,11 @@ void verify_brand_card(char number[]);
 int main(void)
 {
 	char number[1000];
-	printf("Type card number: ");
+	printf("NUMBER: ");
 	scanf("%s", number);
 
-	bool isValid = check_card_number(number);
-	if (isValid == false)
+	bool isInvalid = check_card_number(number);
+	if (isInvalid == false)
 	{
 		printf("INVALID\n");
 		return 1;
